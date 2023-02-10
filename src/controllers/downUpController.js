@@ -10,22 +10,18 @@ exports.listFiles = (req, res, next) => {
                 message: "Unable to scan files!",
             });
         }
-
         let fileInfos = [];
-
         files.forEach((file) => {
             fileInfos.push({
                 url: baseUrl + file,
             });
         });
-
         res.status(200).send(fileInfos);
     });
 };
 
 exports.upload = (req, res, next) => {
-    console.log(req.file)
-    res.status(201).send('Arquivo recebido');
+    res.status(201).send(`Arquivo recebido ${req.file}`);
 };
 
 exports.download = (req, res, next) => {
