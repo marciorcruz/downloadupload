@@ -21,7 +21,7 @@ exports.listFiles = (req, res, next) => {
 };
 
 exports.upload = (req, res, next) => {
-    res.status(201).send(`Arquivo recebido ${req.file}`);
+    res.status(201).send(JSON.stringify(req.file));
 };
 
 exports.download = (req, res, next) => {
